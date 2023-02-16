@@ -1,9 +1,10 @@
 //your code here
  function RopeCost(event){
 	 event.preventDefault();
-	 var input=document.querySelector('input');
+	 var input=document.querySelector('input').value;
 	 var arr=input.split(",");
 	 var cost=0;
+	 arr.sort(function (a,b) {return a-b});
 
 	 while(arr.length>1){
 		 var res=Number(arr[0])+Number(arr[1]);
@@ -11,7 +12,7 @@
 		 cost+=res;
 		 arr.shift();
 		 arr.shift();
-		 arr.sort(a,b)=>{return a-b};
+		 arr.sort(function (a,b) {return a-b});
 	 }
 	 document.getElementById('result').textContent=cost;
  }
